@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src/",
+    "test": "jest",
+    "dev": "NODE_ENV=development next -p 8000",
+    "build": "NODE_ENV='production' next build ./src",
+    "start": "next start ./src",
+    "export": "next export ./src",
+    "prod": "NODE_ENV='production' next build ./src && next export ./src && serve './out' -p 8080"
   },
   "dependencies": {
     "next": "9.5.1",
